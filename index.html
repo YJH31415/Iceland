@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eyjafjallajökull 2010 Ash Transport Simulator</title>
+  <link href="https://unpkg.com/maplibre-gl@5.7.0/dist/maplibre-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/ui/style.css">
+</head>
+<body>
+  <div id="map"></div>
+
+  <aside id="control-panel">
+    <h1>Eyjafjallajökull 2010</h1>
+    <p class="subtitle">Physical ash transport prototype</p>
+
+    <label>
+      분출 고도
+      <output id="eruption-height-value">8.0 km</output>
+      <input id="eruption-height" type="range" min="3" max="15" step="0.5" value="8">
+    </label>
+    <small id="height-lock">시뮬레이션 시작 전 변경 가능</small>
+
+    <label>
+      입자 수
+      <select id="particle-count">
+        <option value="1000">1,000</option>
+        <option value="5000" selected>5,000</option>
+        <option value="10000">10,000</option>
+      </select>
+    </label>
+
+    <label>
+      입자 크기
+      <select id="particle-size">
+        <option value="2">2 μm</option>
+        <option value="8" selected>8 μm</option>
+        <option value="16">16 μm</option>
+        <option value="32">32 μm</option>
+      </select>
+    </label>
+
+    <div class="buttons">
+      <button id="start">시뮬레이션 시작</button>
+      <button id="pause">일시정지</button>
+      <button id="reset">초기화</button>
+    </div>
+
+    <section>
+      <h2>상태</h2>
+      <div>시간: <span id="sim-time">0 h</span></div>
+      <div>활성 입자: <span id="active-particles">0</span></div>
+    </section>
+
+    <section>
+      <h2>항공 경보</h2>
+      <div class="alert-card" id="london-alert"><b>London</b><span>--</span></div>
+      <div class="alert-card" id="paris-alert"><b>Paris</b><span>--</span></div>
+      <div class="alert-card" id="frankfurt-alert"><b>Frankfurt</b><span>--</span></div>
+      <small>※ 경보는 연구/교육용 농도 지표이며 실제 항공 운항 판단에 사용하지 마세요.</small>
+    </section>
+
+    <section>
+      <h2>설명</h2>
+      <div id="weather-readout">대기장: sample</div>
+    </section>
+  </aside>
+
+  <script src="https://unpkg.com/maplibre-gl@5.7.0/dist/maplibre-gl.js"></script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

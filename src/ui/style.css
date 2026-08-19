@@ -1,0 +1,39 @@
+html, body, #map {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+#control-panel {
+  position: absolute;
+  z-index: 10;
+  top: 12px;
+  left: 12px;
+  width: 310px;
+  max-height: calc(100vh - 24px);
+  overflow: auto;
+  padding: 16px;
+  background: rgba(255,255,255,.96);
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0,0,0,.2);
+}
+
+h1 { font-size: 20px; margin: 0; }
+h2 { font-size: 14px; margin: 18px 0 8px; }
+.subtitle, small { color: #666; }
+label { display: block; margin: 14px 0; }
+output { float: right; font-weight: 700; }
+input, select { width: 100%; margin-top: 7px; }
+.buttons { display: flex; gap: 6px; }
+button { flex: 1; padding: 9px; border: 0; border-radius: 8px; cursor: pointer; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.alert-card {
+  display: flex; justify-content: space-between;
+  padding: 9px; margin: 5px 0; border-radius: 7px;
+  background: #eee;
+}
+.alert-low { background: #d9f7df; }
+.alert-moderate { background: #fff1bd; }
+.alert-high { background: #ffd9b3; }
+.alert-extreme { background: #ffb3b3; }
